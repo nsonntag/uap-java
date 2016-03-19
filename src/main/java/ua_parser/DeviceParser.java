@@ -120,7 +120,10 @@ public class DeviceParser {
         replacementOut = matcher.group(groupNum);
       }
 
-      return replacementOut;
+      if(replacementOut == null || replacementOut.isEmpty())
+        return null;
+      else
+        return replacementOut;
     }
     
     private List<String> getSubstitutions(String replacement) {
